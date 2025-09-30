@@ -192,6 +192,7 @@ class Pr006 {
 		System.out.println();
 		int e, result;
 
+		//Вычисление целых степеней числа 2 при помощи for() и while()
 		for(int ii=0; ii < 10; ii++) {
 			result = 1;
 			e = ii;
@@ -201,5 +202,52 @@ class Pr006 {
 			}
 			System.out.println("2 в степени " + ii + " равно " + result);
 		}
+		temp = (char) System.in.read();
+		while (temp != '\n') {
+			temp = (char) System.in.read();
+		}
+
+		//Цикл do - while()
+		System.out.println();
+
+		do {
+			System.out.print("Введите символ: ");
+			ch3 = (char) System.in.read();
+		} while(ch3 != 'q');
+
+		while (temp != '\n') {
+			temp = (char) System.in.read();
+		}
+
+		System.out.println();
+
+		//Угадывание символа при прмощи do - while()
+		char answer = 'R';
+		char ch4;
+		do {
+			System.out.println("Требуется угадать нужный символ");
+			System.out.println("Введите символ с клавиатуры: ");
+
+			ch4 = (char) System.in.read();
+			do {
+				temp = (char) System.in.read();
+			} while(temp != '\n');
+
+			if(ch4 == answer) System.out.println("Угадано");
+			else {
+				System.out.print("Неудачная попытка, символ находится ");
+				if(ch4 < answer)
+					System.out.println("ближе к концу алфавита");
+				else
+					System.out.println("ближе к началу алфавита");
+				System.out.println("Введите символ повторно:\n");
+			}
+
+			temp = ' ';
+			while(temp != '\n') {
+				temp = (char) System.in.read();
+			}
+
+		} while(answer != ch4);
 	}
 }
