@@ -8,6 +8,18 @@ class Avto {
 		return ((double)(V*100))/rash;
 	}
 }
+class IsFact {
+	boolean isFactor(int a, int b) {
+		if((b%a) == 0) return true;
+		else return false;
+	}
+}
+class ChkNum {
+	boolean isEven(int x) {
+		if((x%2) == 0) return true;
+		else return false;
+	}
+}
 class Pr008 {
 	public static void main(String args[]) {
 		double range;
@@ -56,5 +68,17 @@ class Pr008 {
 		System.out.println("Расход для bmw и bmw1: " + bmw.rash + " " + bmw1.rash);
 		bmw2.rash = 9.99;
 		System.out.println("Расход для bmw2 и mercedes: " + bmw2.rash + " " + mercedes.rash);
+
+		//Использование параметров при вызове метода
+		ChkNum e = new ChkNum();
+		if(e.isEven(10)) System.out.println("10 - четное");
+		if(e.isEven(9)) System.out.println("9 - четное");
+		if(e.isEven(8)) System.out.println("8 - четное");
+
+		//Вызов метода с двумя параметрами
+		IsFact x = new IsFact();
+		if(x.isFactor(2,20)) System.out.println("2 - делитель");
+		if(x.isFactor(3,20)) System.out.println("3 - делитель");
+		if(x.isFactor(4,20)) System.out.println("4 - делитель");
 	}
 }
