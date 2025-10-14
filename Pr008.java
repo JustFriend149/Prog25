@@ -3,7 +3,21 @@ class Avto {
 	int pass; //Количество пасажиров, включая водителя
 	int V; //Емкость топливного бака в л.
 	double rash; //Расход топлива в л/100км
+
+	Avto() {
+		pass = 0;
+		V = 0;
+		rash = 0.0;
+	}
+
+	Avto(int p, int v, double r) {
+		pass = p;
+		V = v;
+		rash = r;
+	}
+
 		     //Метод вычисления расстояния, которое автомобиль проедет на полном баке
+	
 	double range() {
 		return ((double)(V*100))/rash;
 	}
