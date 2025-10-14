@@ -7,6 +7,10 @@ class Avto {
 	double range() {
 		return ((double)(V*100))/rash;
 	}
+
+	double rashTopl(int km) {
+		return (double)km*rash/100;
+	}
 }
 class IsFact {
 	boolean isFactor(int a, int b) {
@@ -38,6 +42,12 @@ class Pr008 {
 		//range = ((double)(bmw.V * 100)) / bmw.rash;
 		range = bmw.range();
 		System.out.println("BMW X5 проедет на полном баке " + range + " км");
+		System.out.println("BMW X5 потратит на 100 км " + bmw.rashTopl(100) + " литров топлива");
+
+		int distance = 3350; //Расстояние до Москвы
+
+		System.out.println("BMW X5 потратит " + bmw.rashTopl(distance) + " литров топлива, чтоб доехать до Москвы");
+
 
 		System.out.println("\nИнформация о Mercedes SLC 43: ");
 
@@ -52,6 +62,8 @@ class Pr008 {
 		//range = ((double)(mercedes.V * 100)) / mercedes.rash;
 		range = mercedes.range();
 		System.out.println("Mercedes SLC 43 проедет на полном баке " + range + " км");
+
+		System.out.println("Mercedes SLC 43 потратит " + mercedes.rashTopl(distance) + " литров топлива, чтоб доехать до Москвы");
 
 		//Хранение значений в простых типах переменных
 		int p1 = 50, p2 = 75;
