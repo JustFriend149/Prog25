@@ -108,5 +108,147 @@ class Pr009 {
 			}
 			System.out.println();
 		}
+
+		//Нерегулярные массивы
+		int riders[][] = new int[7][];
+		riders[0] = new int[10];
+		riders[1] = new int[10];
+		riders[2] = new int[10];
+		riders[3] = new int[10];
+		riders[4] = new int[10];
+		riders[5] = new int[2];
+		riders[6] = new int[2];
+
+		int j;
+		for(i=0; i<5; i++)
+			for(j=0; j<10; j++)
+				riders[i][j] = i + j + 10;
+		for(i=5; i<7; i++)
+			for(j=0; j<2; j++)
+				riders[i][j] = i + j + 10;
+
+		System.out.println();
+
+		System.out.println("Количество пассажиров по рейсам в будние дни");
+		for(i=0; i<5; i++) {
+			for(j=0; j<10; j++) 
+				System.out.print(riders[i][j] + " ");
+		System.out.println();
+		}
+		System.out.println();
+
+		System.out.println("Количество пассажиров по рейсам в выходные дни");
+
+		for(i=5; i<7; i++) {
+			for(j=0; j<2; j++) 
+				System.out.print(riders[i][j] + " ");
+		System.out.println();
+		}
+
+		//Трехмерный массив
+		int a3Darray[][][] = new int [2][3][4];
+
+		//Инициализация двумерного массива:
+		int a2Darray[][] = {
+			{1, 3},
+			{3, 10},
+			{4, 3},
+			{9, 3},
+			{35, 104},
+			{21, 14}
+		};
+		System.out.println();
+		for(i=0; i<6; i++) {
+			for(j=0; j<2; j++)
+				System.out.print(a2Darray[i][j] + "\t");
+			System.out.println();
+		}
+
+		//Другая форма объявления массива
+		int[] array = new int[5];
+		char[][] table2 = new char[4][3];
+
+		int nums1[] = new int[10];
+		int nums2[] = new int[10];
+
+		for(i=0; i<10; i++)
+			nums1[i] = i;
+		for(i=0; i<10; i++)
+			nums2[i] = -i;
+
+		System.out.print("Массив nums1: ");
+		for(i=0; i<10; i++)
+			System.out.print(nums1[i] + " ");
+		System.out.println();
+
+		System.out.print("Массив nums2: ");
+		for(i=0; i<10; i++)
+			System.out.print(nums2[i] + " ");
+		System.out.println();
+
+		//Присваивание ссылки на массив nums1!
+
+		nums2 = nums1; //Обе переменные ссылаются на объект, на который ссылалась nums1]
+
+		System.out.print("Массив nums2 после присваивания: ");
+
+		for(i=0; i<10; i++)
+			System.out.print(nums2[i] + " ");
+		System.out.println();
+
+		//Меняем значение одного элемента nums2
+		nums2[3] = 111;
+
+		System.out.print("Массив nums1 после изменения nums2[3]: ");
+
+		for(i=0; i<10; i++)
+			System.out.print(nums1[i] + " ");
+		System.out.println();
+
+		//Использование переменной экземпеляра length
+
+		System.out.println();
+		int list[] = new int[10];
+		int nums3[] = {1,2,3};
+		int table3[][] = {
+			{1,2,3},
+			{4,5},
+			{6,7,8,9}
+		};
+
+
+		System.out.println("Размер списка: " + list.length);
+
+		System.out.println("Размер nums3: " + nums3.length);
+		System.out.println("Размер table3[0]: " + table3[0].length);
+		System.out.println("Размер table3[1]: " + table3[1].length);
+		System.out.println("Размер table3[2]: " + table3[2].length);
+
+		System.out.println();
+		for(i=0; i<list.length; i++)
+			list[i] = i * i;
+
+		System.out.print("Содержимое list: ");
+		for(i=0; i<list.length; i++)
+			 System.out.print(list[i] + " ");
+		System.out.println();
+
+		System.out.println("Размерность table3: ");
+		System.out.println(table3.length);
+
+		//Копирование из значений из одного массива в другой
+		int nums4[] = new int[10];
+		int nums5[] = new int[10];
+
+		for(i=0; i<nums4.length; i++)
+			nums4[i] = i;
+
+		if(nums5.length >= nums4.length)
+			for(i=0; i<nums4.length; i++)
+				nums5[i] = nums4[i];
+		System.out.println("Содержимое nums5: ");
+		for(i=0; i<nums5.length; i++)
+			System.out.print(nums5[i] + " ");
+		System.out.println();
 	}
 }
