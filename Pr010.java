@@ -65,6 +65,78 @@ class Pr010 {
 		str8 = "Строка, строка, строка и строка. 4 слова \"строка\"";
 		System.out.println("Индекс первого вхождения подстроки: " + str8.lastIndexOf("строка"));
 
+		//Массивы строк
+		System.out.println();
+		String strs[] = {"Первая часть", "Вторая часть", "Третья часть", "Четвертая часть", "массива строк"};
+		System.out.println("Исходный массив: ");
+		for(String s : strs)
+			System.out.print(s + " ");
+		 System.out.println("\n");
+
+		 //Измненеие элементов массива
+		 strs[2] = "Третья измененная часть";
+		 strs[3] = "и четвертая часть тоже изменилась у";
+		 System.out.println("Измененный массив: ");
+		 for(String s : strs)
+			 System.out.print(s + " ");
+		 System.out.println("\n");
+
+		 //Работа с подстрокой
+		 String orgstr = "Оригинальная строка для операций с подстрокой";
+
+		 String substr = orgstr.substring(13, 19);
+		 System.out.println("Оригинальное значение в orgstr: " + orgstr);
+		 System.out.println("Значение, сохраненное в substr: " + substr);
+
+		 //Строки при управлении в опраторе switch 
+		 System.out.println();
+		 String command = "dfsfsf";
+
+		 switch(command) {
+			 case "connect":
+				 System.out.println("Подключение");
+				 break;
+                         case "cancel":
+				 System.out.println("Отмена");
+			 case "disconnect":
+				 System.out.println("Отключение");
+				 break;
+			 default:
+				 System.out.println("Неподдерживаемая команда");
+				 break;		 
+		 }
+
+		 //Работа с командной строкой
+		 System.out.println();
+		 System.out.println("Программе передано " + args.length + " аргументов в командной строке");
+		 System.out.println("Список аргументов: ");
+		 int i = 0;
+		 for(String s : args) {
+			 i++;
+			 System.out.println("Аргумент " + i + ": " + s);
+		 }
+
+		 //Обработка аргументов кмандной строки внутри метода main
+
+		 String numbers[][] = {
+			 {"Дир.", "(+7 383) 244-01-70"},
+			 {"Зам.дир.", "(+7 383) 252-02-10"},
+			 {"Менеджер", "(+7 383) 252-02-15"},
+			 {"Диспетчер", "(+7 383) 244-10-18"},
+		 };
+
+		 if(args.length != 1)
+			  System.out.println("Необходимо указать один аргумент");
+		 else{
+			 for(i=0; i<numbers.length; i++) {
+				 if(numbers[i][0].equals(args[0])) {
+					  System.out.println(numbers[i][0] + ": " + numbers[i][1]);
+					  break;
+				 }
+			 }
+			 if(i == numbers.length)
+				  System.out.println("Информация не найдена");
+		 }
 	}
 }
 
