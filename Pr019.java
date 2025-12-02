@@ -1,5 +1,5 @@
 //Суперкласс (родительский для всех подклассов двумерных фигур)
-class TwoDShape {
+abstract class TwoDShape {
 	private double width;
 	private double height;
 	private String name;
@@ -51,17 +51,14 @@ class TwoDShape {
 	}
 
 	void showDim() {
-		System.out.println("\nШирина двумерной фигуры: " + width + "\nВысота двумерной фигуры: " + height);
+		System.out.println("Ширина двумерной фигуры: " + width + "\nВысота двумерной фигуры: " + height);
 	}
 
 	String getName() {
 		System.out.println("Имя двумерной фигуры: " + name);
 		return name;
 	}
-	double area() {
-		System.out.println("Метод area() должен быть переопределен");
-		return 0.0;
-	}
+	abstract double area();
 }
 
 //Подкласс суперкласса TwoDShape (дочерний класс) для описания треугольников
@@ -131,7 +128,7 @@ class Rectangle extends TwoDShape {
 		return getWidth() * getHeight();
 	}
 }
-class Pr018 {
+class Pr019 {
 	public static void main(String args[]) {
 		TwoDShape[] shapes = new TwoDShape[5];
 
@@ -139,7 +136,8 @@ class Pr018 {
 		shapes[1] = new Rectangle(4.5);
 		shapes[2] = new Rectangle(7.0, 4.5);
 		shapes[3] = new Triangle(9.5);
-		shapes[4] = new TwoDShape(4.0, 3.5, "Абстрактная фигура");
+		//Объект абстрактного класса TwoDShape не может быть создан
+		shapes[4] = new Triangle(4.0);
 
 		for(int i=0; i < shapes.length; i++) {
 			System.out.println("Имя объекта: " + shapes[i].getName());
