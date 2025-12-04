@@ -14,6 +14,12 @@ class B extends A {
     //void meth2()
     //         System.out.println("Метод не допускает переопределенеи в подклассах");
 }
+final class C {
+	int i=10;
+}
+class D extends A {
+	int j = 20;
+}
 class ErrorMsg {
     final int OUTERR = 0;
     final int INERR = 1;
